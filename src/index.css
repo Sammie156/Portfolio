@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-gray-100 text-black;
+
+    background-image: radial-gradient(#676767 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
+
+@layer components {
+  .sketch-border {
+    @apply border-2 border-black;
+  }
+}
+
+@layer utilities {
+  .bg-diagonal-lines {
+    background-image: repeating-linear-gradient(
+      45deg,
+      #000000,
+      #000000 1px,
+      transparent 1px,
+      transparent 10px
+    );
+    background-size: 10px 10px;
+    opacity: 0.1;
+  }
+}
