@@ -69,10 +69,6 @@ function Home() {
             PROJECTS
           </h1>
           <ProjectExplorer />
-        </div>
-      </section>
-      <section className="relative w-full border-black pb-20">
-        <div className="max-w-6xl mx-auto px-6 relative">
           <h1 className="text-5xl font-black uppercase mb-12 underline decoration-8">
             BLOGS
           </h1>

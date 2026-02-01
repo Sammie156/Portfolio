@@ -73,15 +73,17 @@ const ProjectExplorer = () => {
       </div>
 
       {/* 2. THE STAGE (Detailed Window View) */}
-      <div className="relative min-h-[500px] border-black pt-12">
+      <div className="relative min-h-[400px] border-black pt-12">
         <AnimatePresence mode="wait">
           {activeProject ? (
             <motion.div
               key={activeProject.id}
-              initial={{ y: 20, opacity: 0 }}
+              initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -20, opacity: 0 }}
               transition={{ duration: 0.2 }}
+
+              className="-mt-16"
             >
               <WindowCard
                 filename={activeProject.name}
@@ -129,9 +131,9 @@ const ProjectExplorer = () => {
               </WindowCard>
             </motion.div>
           ) : (
-            <div className="h-64 flex items-center justify-center border-2 border-dashed border-gray-300">
+            <div className="flex items-center justify-center border-2 border-dashed border-gray-300">
               <p className="font-mono text-sm text-gray-900 uppercase tracking-widest animate-pulse">
-                Click a file to initialize project environment
+                Click a Project to know more
               </p>
             </div>
           )}
