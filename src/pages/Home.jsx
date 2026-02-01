@@ -22,6 +22,14 @@ function Home() {
           </button>
         ))}
       </div>
+
+      <WindowCard filename="Something">
+        <div>
+          <p>
+            Drag this window
+          </p>
+        </div>
+      </WindowCard>
     </main>
   );
 }

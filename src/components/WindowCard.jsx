@@ -6,7 +6,7 @@ const WindowCard = ({ filename, children, className = "" }) => {
       drag
       dragMomentum={false} // Makes it stop exactly where you let go
       whileDrag={{ scale: 1.02, zIndex: 50 }} // Visual feedback when dragging
-      className={`absolute bg-white border-2 border-black shadow-hard ${className}`}
+      className={`absolute bg-white border-2 border-b-4 border-r-3 border-black shadow-hard ${className}`}
     >
       <div className="cursor-grab active:cursor-grabbing flex items-center justify-between border-b-2 border-black bg-gray-100 p-2">
         <span className="text-xs font-mono font-bold select-none px-4">
