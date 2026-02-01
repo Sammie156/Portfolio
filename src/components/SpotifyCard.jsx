@@ -30,7 +30,6 @@ const SpotifyCard = ({
           )}
         </div>
 
-        {/* Song Info - Stacked next to art */}
         <div className="flex flex-col min-w-0">
           <div className="flex items-center gap-1.5 mb-0.5">
             <div

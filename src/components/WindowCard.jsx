@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const WindowCard = ({ filename, children, className = "", windowClass = "bg-gray-100" }) => {
+const WindowCard = ({ filename, children, className = "", windowClass = "bg-gray-100", onClose }) => {
   return (
     <motion.div
       drag
@@ -18,7 +18,7 @@ const WindowCard = ({ filename, children, className = "", windowClass = "bg-gray
         <div className="flex gap-1.5 ml-2">
           <div className="w-3 h-3 rounded-full border-2 border-black bg-white hover:bg-black transition-all" />
           <div className="w-3 h-3 rounded-full border-2 border-black bg-white hover:bg-black transition-all" />
-          <div className="w-3 h-3 rounded-full border-2 border-black bg-white hover:bg-black transition-all" />
+          <div onClick={onClose} className="w-3 h-3 rounded-full border-2 border-black bg-white hover:bg-red-500 transition-all" />
         </div>
       </div>
 
