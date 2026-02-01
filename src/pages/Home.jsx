@@ -1,9 +1,41 @@
+import { useState, useEffect } from "react";
+
 import AnimatedGrid from "../components/AnimatedGrid";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import WindowCard from "../components/WindowCard";
+import SpotifyCard from "../components/SpotifyCard";
 
 function Home() {
+  const useSpotify = (discordID) => {
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+      const fetchStatus = async () => {
+        try {
+          const response = await fetch(
+            `https://api.lanyard.rest/v1/users/${discordID}`
+          );
+          const json = await response.json();
+          setData(json.data);
+        } catch (err) {
+          console.error("Lanyard error: ", err);
+        }
+      };
+
+      fetchStatus();
+      const interval = setInterval(fetchStatus, 30000);
+      return () => {
+        clearInterval(interval);
+      };
+    }, [discordID]);
+
+    return data;
+  };
+
+  const userActivity = useSpotify("712668848763043891");
+  const spotify = userActivity?.spotify;
+
   return (
     <main className="min-h-screen w-full pb-20">
       <Navbar />
@@ -25,13 +57,13 @@ function Home() {
         ))}
       </div>
 
-      <WindowCard filename="Something">
-        <div>
-          <p>
-            Drag this window
-          </p>
-        </div>
-      </WindowCard>
+      <SpotifyCard
+        className="fixed bottom-6 right-6 z-50"
+        isPlaying={!!spotify}
+        songTitle={spotify?.song || "Not Listening"}
+        artist={spotify?.artist || "Spotify"}
+        albumArt={spotify?.album_art_url}
+      />
     </main>
   );
 }
