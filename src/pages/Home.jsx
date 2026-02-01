@@ -7,6 +7,8 @@ import WindowCard from "../components/WindowCard";
 import SpotifyCard from "../components/SpotifyCard";
 import InfoCard from "../components/InfoCard";
 import ProjectExplorer from "../components/ProjectExplorer";
+import BlogArchive from "./BlogArchive";
+import BlogContainer from "../components/BlogContainer";
 
 function Home() {
   const API_KEY = "01a351a110f85aa93236b65f1a3bbf5b";
@@ -54,7 +56,6 @@ function Home() {
 
   return (
     <main className="min-h-screen w-full pb-20">
-      <Navbar />
       <section className="relative w-full border-black pb-40">
         <div className="max-w-6xl mx-auto px-6 relative">
           <Hero />
@@ -62,12 +63,20 @@ function Home() {
         </div>
       </section>
 
-      <section className="relative w-full border-black pb-20">
+      <section className="relative w-full border-black">
         <div className="max-w-6xl mx-auto px-6 relative">
           <h1 className="text-5xl font-black uppercase mb-12 underline decoration-8">
             PROJECTS
           </h1>
           <ProjectExplorer />
+        </div>
+      </section>
+      <section className="relative w-full border-black pb-20">
+        <div className="max-w-6xl mx-auto px-6 relative">
+          <h1 className="text-5xl font-black uppercase mb-12 underline decoration-8">
+            BLOGS
+          </h1>
+          <BlogContainer />
         </div>
       </section>
 
