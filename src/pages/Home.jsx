@@ -7,34 +7,49 @@ import WindowCard from "../components/WindowCard";
 import SpotifyCard from "../components/SpotifyCard";
 
 function Home() {
-  const useSpotify = (discordID) => {
-    const [data, setData] = useState(null);
+  const API_KEY = "01a351a110f85aa93236b65f1a3bbf5b";
+  const USERNAME = "Sammie156";
+
+  const useMusic = () => {
+    const [track, setTrack] = useState(null);
 
     useEffect(() => {
-      const fetchStatus = async () => {
+      const fetchTrack = async () => {
         try {
-          const response = await fetch(
-            `https://api.lanyard.rest/v1/users/${discordID}`
+          const res = await fetch(
+            `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${USERNAME}&api_key=${API_KEY}&format=json&limit=1`
           );
-          const json = await response.json();
-          setData(json.data);
+          const data = await res.json();
+          const latestTrack = data.recenttracks.track[0];
+
+          const imageUrl =
+            latestTrack.image.find((img) => img.size === "extralarge")[
+              "#text"
+            ] ||
+            latestTrack.image.find((img) => img.size === "large")["#text"] ||
+            ""; // Fallback to empty string
+
+          setTrack({
+            title: latestTrack.name,
+            artist: latestTrack.artist["#text"],
+            albumArt: imageUrl,
+            // Last.fm uses a specific attribute to check if currently playing
+            isPlaying: latestTrack["@attr"]?.nowplaying === "true",
+          });
         } catch (err) {
-          console.error("Lanyard error: ", err);
+          console.error("Music fetch failed", err);
         }
       };
 
-      fetchStatus();
-      const interval = setInterval(fetchStatus, 30000);
-      return () => {
-        clearInterval(interval);
-      };
-    }, [discordID]);
+      fetchTrack();
+      const timer = setInterval(fetchTrack, 10000);
+      return () => clearInterval(timer);
+    }, []);
 
-    return data;
+    return track;
   };
 
-  const userActivity = useSpotify("712668848763043891");
-  const spotify = userActivity?.spotify;
+  const music = useMusic();
 
   return (
     <main className="min-h-screen w-full pb-20">
@@ -59,10 +74,10 @@ function Home() {
 
       <SpotifyCard
         className="fixed bottom-6 right-6 z-50"
-        isPlaying={!!spotify}
-        songTitle={spotify?.song || "Not Listening"}
-        artist={spotify?.artist || "Spotify"}
-        albumArt={spotify?.album_art_url}
+        isPlaying={music?.isPlaying}
+        songTitle={music?.title || "Not Listening"}
+        artist={music?.artist || "Spotify"}
+        albumArt={music?.albumArt}
       />
     </main>
   );

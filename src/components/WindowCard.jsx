@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const WindowCard = ({ filename, children, className = "" }) => {
+const WindowCard = ({ filename, children, className = "", windowClass = "bg-gray-100" }) => {
   return (
     <motion.div
       drag
@@ -8,7 +8,7 @@ const WindowCard = ({ filename, children, className = "" }) => {
       whileDrag={{ scale: 1.02, zIndex: 50 }} // Visual feedback when dragging
       className={`absolute bg-white border-2 border-b-4 border-r-3 border-black shadow-hard ${className}`}
     >
-      <div className="cursor-grab active:cursor-grabbing flex items-center justify-between border-b-2 border-black bg-gray-100 p-2">
+      <div className={`cursor-grab active:cursor-grabbing flex items-center justify-between border-b-2 border-black ${windowClass} p-2`}>
         <span className="text-xs font-mono font-bold select-none px-4">
           {filename || "untitled.exe"}
         </span>

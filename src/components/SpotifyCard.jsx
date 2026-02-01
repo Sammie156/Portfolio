@@ -11,6 +11,7 @@ const SpotifyCard = ({
   return (
     <WindowCard
       filename="now_playing.sh"
+      windowClass="bg-green-400"
       className={`w-64 sm:w-72 ${className}`}
     >
       <div className="p-3 flex items-center gap-4 bg-white">
@@ -20,7 +21,7 @@ const SpotifyCard = ({
             <img
               src={albumArt}
               alt="Album Art"
-              className="w-full h-full object-cover grayscale contrast-125"
+              className="w-full h-full object-cover grayscale"
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-diagonal-lines opacity-20">
