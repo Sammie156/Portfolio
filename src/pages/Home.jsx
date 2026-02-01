@@ -5,6 +5,7 @@ import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import WindowCard from "../components/WindowCard";
 import SpotifyCard from "../components/SpotifyCard";
+import InfoCard from "../components/InfoCard";
 
 function Home() {
   const API_KEY = "01a351a110f85aa93236b65f1a3bbf5b";
@@ -48,7 +49,6 @@ function Home() {
 
     return track;
   };
-
   const music = useMusic();
 
   return (
@@ -56,20 +56,7 @@ function Home() {
       <Navbar />
       <div className="max-w-6xl mx-auto px-6">
         <Hero />
-      </div>
-
-      <div className="flex border-l-2 border-t-2 border-black mb-16 bg-white shadow-hard">
-        {["Projects", "Blog", "Skills", "Contact"].map((item) => (
-          <button
-            key={item}
-            className="flex-1 p-4 border-r-2 border-b-2 border-black font-bold hover:bg-black hover:text-white transition-all group flex justify-between items-center"
-          >
-            {item}
-            <span className="group-hover:rotate-45 transition-transform">
-              ↗
-            </span>
-          </button>
-        ))}
+        <InfoCard className="top-100 z-20" />
       </div>
 
       <SpotifyCard
