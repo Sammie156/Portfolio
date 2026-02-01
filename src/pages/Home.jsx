@@ -1,10 +1,12 @@
 import AnimatedGrid from "../components/AnimatedGrid";
 import Hero from "../components/Hero";
+import Navbar from "../components/Navbar";
 import WindowCard from "../components/WindowCard";
 
 function Home() {
   return (
     <main className="min-h-screen w-full pb-20">
+      <Navbar />
       <div className="max-w-6xl mx-auto px-6">
         <Hero />
       </div>
