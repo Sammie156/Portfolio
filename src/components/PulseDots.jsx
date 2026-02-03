@@ -20,7 +20,7 @@ const PulseDots = ({bg_color}) => {
           return (
             <div key={i} className="flex items-center justify-center">
               <div
-                className="w-[1px] h-[1px] bg-black rounded-full"
+                className="w-[1px] h-[1px] bg-[#FF00F5] rounded-full"
                 style={{
                   animation: "smooth-wave 3s infinite ease-in-out",
                   animationDelay: `${delay}s`,

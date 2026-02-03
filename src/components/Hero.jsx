@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section className="py-20 flex flex-col md:flex-row items-center justify-between gap-10">
       <div className="flex-1">
-        <h1 className="text-7xl font-black lexend-mega-hero text-black leading-none mb-2">
+        <h1 className="text-7xl font-black lexend-mega-hero text-black leading-none mb-4">
           Hello. <br /> I'm Sammie!
         </h1>
         <p className="text-2xl lexend-mega-sub font-medium max-w-md border-l-4 font-mono text-black border-black pl-4">
