@@ -1,13 +1,14 @@
+// FIXME: Change this image ASAP. I hate this gay ass image
 import heroImage from "../assets/SAM.jpeg";
 
 const Hero = () => {
   return (
     <section className="py-20 flex flex-col md:flex-row items-center justify-between gap-10">
       <div className="flex-1">
-        <h1 className="text-7xl font-black text-black leading-none mb-4">
+        <h1 className="text-7xl font-black lexend-mega-hero text-black leading-none mb-2">
           Hello. <br /> I'm Sammie!
         </h1>
-        <p className="text-2xl font-medium max-w-md border-l-4 font-mono text-black border-black pl-4">
+        <p className="text-2xl lexend-mega-sub font-medium max-w-md border-l-4 font-mono text-black border-black pl-4">
           B. Tech Student and Developer, currently dabbling in low level
           systems.
         </p>

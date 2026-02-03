@@ -7,7 +7,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-[100] w-full bg-[#c4c4c4] border-b-4 border-black px-4 py-3 flex items-center justify-between shadow-[0_4px_0_0_rgba(0,0,0,1)]">
+    <nav className="sticky top-0 z-[100] w-full bg-[#FFDC8B] border-b-4 border-black px-4 py-3 flex items-center justify-between shadow-[0_4px_0_0_rgba(0,0,0,1)]">
       <div className="flex items-center gap-2 group cursor-pointer">
         <span className="font-black text-lg hidden sm:block uppercase tracking-tighter">
           <a href="/">
