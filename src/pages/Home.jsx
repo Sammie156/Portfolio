@@ -57,15 +57,15 @@ function Home() {
 
   return (
     <main className="min-h-screen w-full pb-20">
-      <section className="relative w-full border-black bg-[#C0F7FE]">
-        <PulseDots bg_color="C0F7FE"/>
+      <section className="relative w-full border-black bg-[#F7CB46]">
+        <PulseDots bg_color="F7CB46"/>
         <div className="max-w-6xl mx-auto px-6 relative">
           <Hero />
           {/* <InfoCard className="absolute top-[80%] z-20 mt-5" /> */}
         </div>
       </section>
 
-      <div className="w-full leading-[0] bg-[#99E885]">
+      <div className="w-full leading-[0] bg-[#FE90E8]">
         <svg
           viewBox="0 0 1440 120"
           fill="none"
@@ -80,7 +80,7 @@ function Home() {
          C780 20 840 20 900 60 C960 100 1020 100 1080 60
          C1140 20 1200 20 1260 60 C1320 100 1380 100 1440 60
          V0H0V60Z"
-            fill="#C0F7FE"
+            fill="#F7CB46"
           />
           {/* Bold Stroke Path */}
           <path
@@ -96,7 +96,7 @@ function Home() {
         </svg>
       </div>
 
-      <section className="relative w-full border-black bg-[#99E885]">
+      <section className="relative w-full border-black bg-[#FE90E8]">
         <div className="max-w-6xl mx-auto px-6 relative">
           <h1 className="text-5xl font-black uppercase mb-12 pt-10 underline decoration-8">
             PROJECTS
