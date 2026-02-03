@@ -1,49 +1,27 @@
 const PulseDots = ({bg_color}) => {
-  const dots = Array.from({ length: 900 });
-
   return (
-    <div className={`absolute inset-0 z-0 pointer-events-none p-2 overflow-hidden bg-[#${bg_color}]`}>
-      <div
-        className="grid w-full h-full"
+    <div className={`absolute inset-0 z-0 pointer-events-none overflow-hidden bg-[#${bg_color}]`}>
+      <div 
+        className="absolute inset-0 w-full h-full animate-wave-shift"
         style={{
-          gridTemplateColumns: "repeat(45, 1fr)",
-          gridTemplateRows: "repeat(20, 1fr)",
-          gap: "2px",
+          /* Creates the dot grid pattern as a background */
+          backgroundImage: 'radial-gradient(white 2px, transparent 0)',
+          backgroundSize: '24px 24px',
+          /* The Mask creates the "wave" visibility */
+          maskImage: 'linear-gradient(45deg, rgba(0,0,0,0.2) 25%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.2) 75%)',
+          WebkitMaskImage: 'linear-gradient(45deg, rgba(0,0,0,0.2) 25%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.2) 75%)',
+          maskSize: '400% 400%',
+          WebkitMaskSize: '400% 400%',
         }}
-      >
-        {dots.map((_, i) => {
-          const row = Math.floor(i / 45);
-          const col = i % 45;
-          // Using a slightly longer delay spread for a more fluid "liquid" wave
-          const delay = (row + col) * 0.1;
-
-          return (
-            <div key={i} className="flex items-center justify-center">
-              <div
-                className="w-[1px] h-[1px] bg-white rounded-full"
-                style={{
-                  animation: "smooth-wave 3s infinite ease-in-out",
-                  animationDelay: `${delay}s`,
-                  willChange: "transform, opacity", // GPU optimization
-                }}
-              />
-            </div>
-          );
-        })}
-      </div>
+      />
 
       <style jsx>{`
-        @keyframes smooth-wave {
-          0%,
-          100% {
-            transform: scale(1);
-            opacity: 0.15;
-          }
-          45%,
-          55% {
-            transform: scale(3.5); /* Soft peak */
-            opacity: 0.8;
-          }
+        @keyframes wave-shift {
+          0% { mask-position: 100% 100%; -webkit-mask-position: 100% 100%; }
+          100% { mask-position: 0% 0%; -webkit-mask-position: 0% 0%; }
+        }
+        .animate-wave-shift {
+          animation: wave-shift 8s linear infinite;
         }
       `}</style>
     </div>

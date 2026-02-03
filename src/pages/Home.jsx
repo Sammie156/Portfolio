@@ -58,7 +58,7 @@ function Home() {
   return (
     <main className="min-h-screen w-full pb-20">
       <section className="relative w-full border-black bg-[#F7CB46]">
-        <PulseDots bg_color="F7CB46"/>
+        {/* <PulseDots bg_color="F7CB46"/> */}
         <div className="max-w-6xl mx-auto px-6 relative">
           <Hero />
           {/* <InfoCard className="absolute top-[80%] z-20 mt-5" /> */}
