@@ -29,16 +29,16 @@ const ProjectExplorer = () => {
       details:
         "A minimal e-commerce site made using MERN Stack, with items stored in MongoDB and UI made using TailwindCSS and React. The entire project was built as a learning session in my summer internship at Atyantik Pvt. Ltd.",
       image: dummyImage,
-      github: "https://github.com/Sammie156/DummyProducts"
+      github: "https://github.com/Sammie156/DummyProducts",
     },
     {
-        id: "coming-soon",
-        name: "under.construction",
-        type: "👀",
-        color: "bg-yellow-500",
-        summary: "More projects will be added here",
-        details: "Nothing here yet"
-    }
+      id: "coming-soon",
+      name: "under.construction",
+      type: "👀",
+      color: "bg-yellow-500",
+      summary: "More projects will be added here",
+      details: "Nothing here yet",
+    },
   ];
 
   return (
@@ -49,11 +49,19 @@ const ProjectExplorer = () => {
           <button
             key={proj.id}
             onClick={() => setActiveProject(proj)}
-            className={`w-full border-2 border-black p-6 bg-white shadow-hard hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all text-left flex flex-col group ${
-              activeProject?.id === proj.id
-                ? "ring-4 ring-black ring-offset-2"
-                : ""
-            }`}
+            className={`w-full bg-white p-6 text-left flex flex-col group
+                        border-2 border-black
+                        transition-none
+                        hover:translate-x-[2px] hover:translate-y-[2px]
+                        hover:shadow-[10px_10px_0px_#000]
+                        active:translate-x-[6px] active:translate-y-[6px]
+                        active:shadow-none
+                      active:bg-black active:text-white
+                        ${
+                          activeProject?.id === proj.id
+                            ? "border-4 border-black shadow-[4px_4px_0px_#000]"
+                            : ""
+                        }`}
           >
             <div className="flex justify-between items-start mb-4">
               <span className="text-[10px] font-mono font-bold px-2 py-1 border-2 border-black bg-gray-100 uppercase">
@@ -78,11 +86,10 @@ const ProjectExplorer = () => {
           {activeProject ? (
             <motion.div
               key={activeProject.id}
-              initial={{ y: -20, opacity: 0 }}
+              initial={{ y: -40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -20, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-
+              transition={{ duration: 0.15, ease: "linear" }}
               className="-mt-16"
             >
               <WindowCard
@@ -122,7 +129,16 @@ const ProjectExplorer = () => {
                       href={activeProject.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block w-full border-2 border-black py-4 text-center font-black uppercase hover:bg-black hover:text-white transition-all shadow-hard active:shadow-none active:translate-x-1 active:translate-y-1 bg-white text-black"
+                      className="block w-full border-4 border-black py-4
+                                  text-center font-black uppercase
+                                  bg-white text-black
+                                  shadow-[6px_6px_0px_#000]
+                                  transition-none
+                                  hover:translate-x-[2px] hover:translate-y-[2px]
+                                  hover:shadow-[10px_10px_0px_#000]
+                                  active:translate-x-[6px] active:translate-y-[6px]
+                                  active:shadow-none
+                                  active:bg-black active:text-white"
                     >
                       View_Source_On_GitHub
                     </a>
@@ -131,9 +147,12 @@ const ProjectExplorer = () => {
               </WindowCard>
             </motion.div>
           ) : (
-            <div className="flex items-center justify-center border-2 border-dashed border-gray-300">
-              <p className="font-mono text-sm text-gray-900 uppercase tracking-widest animate-pulse">
-                Click a Project to know more
+            <div
+              className="flex items-center justify-center
+                border-2 border-black bg-gray-50 min-h-[300px]"
+            >
+              <p className="font-mono text-md animate-pulse text-black uppercase tracking-widest">
+                SELECT_A_PROJECT
               </p>
             </div>
           )}

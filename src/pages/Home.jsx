@@ -10,6 +10,7 @@ import ProjectExplorer from "../components/ProjectExplorer";
 import BlogArchive from "./BlogArchive";
 import BlogContainer from "../components/BlogContainer";
 import PulseDots from "../components/PulseDots";
+import AnimatedDivider from "../components/AnimatedDivider";
 
 function Home() {
   const API_KEY = "01a351a110f85aa93236b65f1a3bbf5b";
@@ -56,7 +57,7 @@ function Home() {
   const music = useMusic();
 
   return (
-    <main className="min-h-screen w-full pb-20">
+    <main className="w-full pb-20 no-scrollbar">
       <section className="relative w-full border-black bg-[#F7CB46]">
         {/* <PulseDots bg_color="F7CB46"/> */}
         <div className="max-w-6xl mx-auto px-6 relative">
@@ -65,36 +66,7 @@ function Home() {
         </div>
       </section>
 
-      <div className="w-full leading-[0] bg-[#FE90E8]">
-        <svg
-          viewBox="0 0 1440 120"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-auto"
-        >
-          <path
-            /* Modified path: More frequent oscillations (60 units per curve instead of 120) */
-            d="M0 60 
-         C60 20 120 20 180 60 C240 100 300 100 360 60
-         C420 20 480 20 540 60 C600 100 660 100 720 60
-         C780 20 840 20 900 60 C960 100 1020 100 1080 60
-         C1140 20 1200 20 1260 60 C1320 100 1380 100 1440 60
-         V0H0V60Z"
-            fill="#F7CB46"
-          />
-          {/* Bold Stroke Path */}
-          <path
-            d="M0 60 
-         C60 20 120 20 180 60 C240 100 300 100 360 60
-         C420 20 480 20 540 60 C600 100 660 100 720 60
-         C780 20 840 20 900 60 C960 100 1020 100 1080 60
-         C1140 20 1200 20 1260 60 C1320 100 1380 100 1440 60"
-            stroke="black"
-            strokeWidth="6"
-            strokeLinecap="round"
-          />
-        </svg>
-      </div>
+      <AnimatedDivider top_color="#F7CB46" bottom_color="#FE90E8"/>
 
       <section className="relative w-full border-black bg-[#FE90E8]">
         <div className="max-w-6xl mx-auto px-6 relative">
@@ -102,12 +74,84 @@ function Home() {
             PROJECTS
           </h1>
           <ProjectExplorer />
+        </div>
+      </section>
+
+      <AnimatedDivider bottom_color="#7DF9FF" top_color="#FE90E8"/>
+
+      <section className="relative w-full border-black bg-[#7DF9FF]">
+        <div className="max-w-6xl mx-auto px-6 relative">
           <h1 className="text-5xl font-black uppercase mb-12 underline decoration-8">
             BLOGS
           </h1>
           <BlogContainer />
         </div>
       </section>
+
+      <AnimatedDivider top_color="#7DF9FF" bottom_color="#2FFF2F"/>
+
+      <section className="relative w-full border-black bg-[#2FFF2F]">
+        <div className="max-w-6xl mx-auto px-6 relative">
+          <h1 className="text-5xl font-black uppercase mb-12 underline decoration-8">
+            CREATIONS[placeholder for now]
+          </h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 min-h-[500px]">
+            {/* Creation 1: Systems / Go Focus */}
+            <WindowCard
+              filename="terminal_dash.go"
+              windowClass="bg-[#D9F99D]"
+              className="relative h-64 w-full md:w-80"
+            >
+              <div className="p-4 font-mono text-sm">
+                <p className="text-green-600 animate-pulse font-bold mb-2">● System Active</p>
+                <p className="text-gray-600 italic">
+                  Developing a TUI dashboard using Bubble Tea for real-time
+                  monitoring...
+                </p>
+                <div className="mt-4 bg-black text-white p-2 border-2 border-black">
+                  $ go run main.go
+                </div>
+              </div>
+            </WindowCard>
+
+            {/* Creation 2: Design / Neobrutalism Focus */}
+            <WindowCard
+              filename="portfolio_v2.exe"
+              windowClass="bg-[#A6FAFF]"
+              className="relative h-64 w-full md:w-80 md:mt-12"
+            >
+              <div className="p-4">
+                <div className="w-full h-24 bg-[#FFDC8B] border-2 border-black mb-2 flex items-center justify-center font-black">
+                  UI_PREVIEW.JPG
+                </div>
+                <p className="font-bold uppercase text-xs">
+                  A deep dive into Neobrutalist web architecture and Framer
+                  Motion.
+                </p>
+              </div>
+            </WindowCard>
+
+            {/* Creation 3: Networking Focus */}
+            <WindowCard
+              filename="packet_sniffer.c"
+              windowClass="bg-[#FF90E8]"
+              className="relative h-64 w-full md:w-80"
+            >
+              <div className="p-4 font-mono text-xs space-y-1">
+                <p>TCP [192.168.1.1] [8.8.8.8]</p>
+                <p>HTTP/1.1 GET /index.html</p>
+                <p className="bg-yellow-200 border border-black px-1 mt-4 inline-block">
+                  IN_PROGRESS
+                </p>
+              </div>
+            </WindowCard>
+          </div>
+        </div>
+      </section>
+
+      <AnimatedDivider top_color="#2FFF2F" bottom_color="#FFFFFF00"/>
+
+      <h1 className="text-4xl">UNDER CONSTRUCTION</h1>
 
       <SpotifyCard
         className="fixed bottom-6 right-6 z-50"

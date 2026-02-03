@@ -19,7 +19,7 @@ const BlogContainer = () => {
         <button
           key={blog.id}
           onClick={() => navigate(`/blogs/${blog.id}`)}
-          className="w-full border-2 border-black p-6 bg-white shadow-hard hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all text-left flex flex-col group"
+          className="w-full border-2 border-black p-6 bg-white shadow-hard hover:translate-x-1 hover:shadow-[8px_8px_0px_rgba(0,0,0,1)] text-left flex flex-col group"
         >
           {/* Top Label Bar */}
           <div className="flex justify-between items-start mb-6">
@@ -32,7 +32,7 @@ const BlogContainer = () => {
           </div>
 
           {/* Title */}
-          <h2 className="text-3xl font-black uppercase mb-3 tracking-tighter group-hover:underline decoration-4">
+          <h2 className="text-3xl font-black uppercase mb-3 tracking-tighter decoration-4">
             {blog.title || blog.id.replace(/-/g, " ")}
           </h2>
 
