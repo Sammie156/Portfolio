@@ -9,7 +9,7 @@ import InfoCard from "../components/InfoCard";
 import ProjectExplorer from "../components/ProjectExplorer";
 import BlogArchive from "./BlogArchive";
 import BlogContainer from "../components/BlogContainer";
-import PulseDots from "../components/PulseDots";
+import PulseDots from "../components/PulseDots"; // Removed due to performance problems
 import AnimatedDivider from "../components/AnimatedDivider";
 
 function Home() {
@@ -59,7 +59,6 @@ function Home() {
   return (
     <main className="w-full pb-20 no-scrollbar">
       <section className="relative w-full border-black bg-[#F7CB46]">
-        {/* <PulseDots bg_color="F7CB46"/> */}
         <div className="max-w-6xl mx-auto px-6 relative">
           <Hero />
           {/* <InfoCard className="absolute top-[80%] z-20 mt-5" /> */}
@@ -70,7 +69,7 @@ function Home() {
 
       <section className="relative w-full border-black bg-[#FE90E8]">
         <div className="max-w-6xl mx-auto px-6 relative">
-          <h1 className="text-5xl font-black uppercase mb-12 pt-10 underline decoration-8">
+          <h1 className="text-5xl font-black sora-mid uppercase mb-12 pt-10 underline decoration-4">
             PROJECTS
           </h1>
           <ProjectExplorer />
@@ -81,7 +80,7 @@ function Home() {
 
       <section className="relative w-full border-black bg-[#7DF9FF]">
         <div className="max-w-6xl mx-auto px-6 relative">
-          <h1 className="text-5xl font-black uppercase mb-12 underline decoration-8">
+          <h1 className="text-5xl font-black sora-mid uppercase mb-12 underline decoration-4">
             BLOGS
           </h1>
           <BlogContainer />
@@ -92,11 +91,10 @@ function Home() {
 
       <section className="relative w-full border-black bg-[#2FFF2F]">
         <div className="max-w-6xl mx-auto px-6 relative">
-          <h1 className="text-5xl font-black uppercase mb-12 underline decoration-8">
-            CREATIONS[placeholder for now]
+          <h1 className="text-5xl font-black sora-mid uppercase mb-12 underline decoration-4">
+            CREATIONS (placeholder for now)
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 min-h-[500px]">
-            {/* Creation 1: Systems / Go Focus */}
             <WindowCard
               filename="terminal_dash.go"
               windowClass="bg-[#D9F99D]"
@@ -111,38 +109,6 @@ function Home() {
                 <div className="mt-4 bg-black text-white p-2 border-2 border-black">
                   $ go run main.go
                 </div>
-              </div>
-            </WindowCard>
-
-            {/* Creation 2: Design / Neobrutalism Focus */}
-            <WindowCard
-              filename="portfolio_v2.exe"
-              windowClass="bg-[#A6FAFF]"
-              className="relative h-64 w-full md:w-80 md:mt-12"
-            >
-              <div className="p-4">
-                <div className="w-full h-24 bg-[#FFDC8B] border-2 border-black mb-2 flex items-center justify-center font-black">
-                  UI_PREVIEW.JPG
-                </div>
-                <p className="font-bold uppercase text-xs">
-                  A deep dive into Neobrutalist web architecture and Framer
-                  Motion.
-                </p>
-              </div>
-            </WindowCard>
-
-            {/* Creation 3: Networking Focus */}
-            <WindowCard
-              filename="packet_sniffer.c"
-              windowClass="bg-[#FF90E8]"
-              className="relative h-64 w-full md:w-80"
-            >
-              <div className="p-4 font-mono text-xs space-y-1">
-                <p>TCP [192.168.1.1] [8.8.8.8]</p>
-                <p>HTTP/1.1 GET /index.html</p>
-                <p className="bg-yellow-200 border border-black px-1 mt-4 inline-block">
-                  IN_PROGRESS
-                </p>
               </div>
             </WindowCard>
           </div>

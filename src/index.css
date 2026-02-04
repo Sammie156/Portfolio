@@ -44,6 +44,13 @@ button,
   font-style: normal;
 }
 
+.sora-mid {
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
 .sora-sub {
   font-family: "Sora", sans-serif;
   font-optical-sizing: auto;
