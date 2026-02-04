@@ -58,14 +58,15 @@ function Home() {
 
   return (
     <main className="w-full pb-20 no-scrollbar">
-      <section className="relative w-full border-black bg-[#F7CB46]">
+      <section className="relative w-full border-black bg-[#F4D738]">
+      {/* <PulseDots /> */}
         <div className="max-w-6xl mx-auto px-6 relative">
           <Hero />
           {/* <InfoCard className="absolute top-[80%] z-20 mt-5" /> */}
         </div>
       </section>
 
-      <AnimatedDivider top_color="#F7CB46" bottom_color="#FE90E8"/>
+      <AnimatedDivider top_color="#F4D738" bottom_color="#FE90E8"/>
 
       <section className="relative w-full border-black bg-[#FE90E8]">
         <div className="max-w-6xl mx-auto px-6 relative">

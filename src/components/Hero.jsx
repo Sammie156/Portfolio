@@ -1,4 +1,5 @@
 import heroImage from "../assets/Sam_Pic.jpeg";
+import InfoCard from "./InfoCard";
 
 const Hero = () => {
   return (
@@ -14,14 +15,14 @@ const Hero = () => {
       </div>
 
       <div
-        className="w-64 bg-[#fefefe] border-[5px] border-black shadow-[10px_10px_0px_#000] transition-all duration-150 hover:-translate-x-1 hover:-translate-y-1
+        className="w-64 bg-[#fefefe] border-[5px] border-black shadow-[10px_10px_0px_#000] transition-none duration-150 hover:-translate-x-1 hover:-translate-y-1
                   hover:shadow-[14px_14px_0px_#000] rotate-[-1deg]"
       >
         <div className="p-3 bg-white border-b-[4px] border-black">
           <img
             src={heroImage}
             alt="Hero"
-            className="w-full object-contain border-[4px] border-black bg-white contrast-125 brightness-95"
+            className="w-48 h-64 border-4 border-black bg-white contrast-125 brightness-95"
           />
         </div>
 

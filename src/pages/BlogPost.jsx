@@ -26,7 +26,7 @@ const BlogPost = () => {
       <div className="bg-white p-4 border-black border-2">
         <Link
           to="/blogs"
-          className="font-mono font-bold border-2 border-black px-4 py-2 hover:bg-black hover:text-white transition-all shadow-hard inline-block mb-12"
+          className="font-mono font-bold border-2 border-black px-4 py-2 hover:bg-black hover:text-white transition-none shadow-hard inline-block mb-12"
         >
           [←] RETURN_TO_ARCHIVE
         </Link>

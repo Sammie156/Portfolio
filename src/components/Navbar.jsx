@@ -62,7 +62,7 @@ const Navbar = () => {
             >
               <button
                 onClick={() => setIsCVModalOpen(false)}
-                className="absolute top-3 right-3 w-8 h-8 border-2 border-black bg-white hover:bg-red-500 hover:text-white transition-colors flex items-center justify-center font-black"
+                className="absolute top-3 right-3 w-8 h-8 border-2 border-black bg-white hover:bg-red-500 hover:text-white transition-none flex items-center justify-center font-black"
               >
                 ✕
               </button>
@@ -71,8 +71,8 @@ const Navbar = () => {
                 <h2 className="font-mega text-2xl mb-2 uppercase leading-tight">
                   System Request
                 </h2>
-                <p className="font-mono text-xs mb-8 text-gray-600">
-                  FILE: RESUME_SAMMIE_2026.PDF
+                <p className="font-mono text-xs uppercase mb-8 text-gray-600">
+                  FILE: Samanwaya_Datta_Resume.PDF
                 </p>
 
                 <div className="flex items-center justify-center gap-8">
@@ -85,7 +85,7 @@ const Navbar = () => {
 
                   <button
                     onClick={handleDownload}
-                    className="h-14 border-4 border-black px-8 bg-[#A6FAFF] font-black uppercase text-xs shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all rounded-full"
+                    className="h-14 border-4 border-black px-8 bg-[#A6FAFF] font-black uppercase text-xs shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_rgba(0,0,0,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-none rounded-full"
                   >
                     Download Now
                   </button>
