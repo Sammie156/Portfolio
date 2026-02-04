@@ -30,11 +30,10 @@ button,
     pointer;
 }
 
-/* Change cursor on interactive elements */
 .cursor-hover {
   transform: scale(1.5);
   background-color: #000;
-  mix-blend-mode: difference; /* Optional: makes it visible on black backgrounds */
+  mix-blend-mode: difference;
 }
 
 .sora {

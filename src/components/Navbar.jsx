@@ -4,9 +4,10 @@ import { motion, AnimatePresence } from "framer-motion";
 const Navbar = () => {
   const [isCVModalOpen, setIsCVModalOpen] = useState(false);
 
+  // TODO: Time to make these functional
   const navItems = [
     { name: "Projects", path: "#projects" },
-    { name: "Blog", path: "/blogs" },
+    { name: "Blog", path: "#blogs" },
     { name: "Creations", path: "#creations" },
     { name: "Contact", path: "#contact-me" },
   ];
@@ -20,7 +21,6 @@ const Navbar = () => {
     <>
       <nav className="sticky top-0 z-[100] w-full bg-[#D9F99D] border-b-[5px] border-black shadow-[0_4px_0_0_rgba(0,0,0,1)]">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          {/* LEFT — BRAND */}
           <a
             href="/"
             className="font-mega text-2xl uppercase tracking-tighter border-[3px] border-black px-4 py-1 bg-black text-white shadow-[4px_4px_0px_#FFDC8B] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_#FFDC8B] transition-all"
@@ -28,7 +28,6 @@ const Navbar = () => {
             Sammie156
           </a>
 
-          {/* CENTER — LINKS */}
           <div className="hidden md:flex items-center gap-4">
             {navItems.map((item) => (
               <a
@@ -41,7 +40,6 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* RIGHT — SYSTEM TOOLS */}
           <div className="flex gap-3">
             <button
               onClick={() => setIsCVModalOpen(true)}
